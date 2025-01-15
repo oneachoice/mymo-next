@@ -1,0 +1,36 @@
+.text-area-con {
+    display: flex;
+    flex-direction: column;
+
+
+    margin: 0.5rem 0;
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.label {
+    font-size: var(--fs-2);
+}
+
+.text-area {
+    margin: 0.25rem 0;
+
+    background-color: var(--faint-grey-color);
+    border: none;
+    
+    padding: 0.5rem;
+
+    border-radius: var(--round-1);
+
+    resize: none;
+}
+
+.feedback {
+    color: var(--danger-color);
+}

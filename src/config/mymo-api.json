@@ -1,0 +1,8 @@
+{
+    "baseUrl": "http://localhost:8080",
+    "api": {
+        "sign-in": "/api/sign-in",
+        "sign-up": "/api/sign-up",
+        "memo": "/api/memo"
+    }
+}

@@ -1,0 +1,56 @@
+.memo-item {
+  margin: 1.5rem 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  a {
+    display: block;
+
+    padding: 1rem;
+
+    background-color: var(--light-color);
+    border-radius: var(--round-1);
+
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+
+    text-decoration: none;
+    color: var(--dark-color);
+
+    transition: var(--speed-1);
+
+    &:hover {
+      color: var(--dark-color--active);
+
+      background-color: var(--offcanvas-color);
+    }
+  }
+}
+
+.memo-item__header {
+  margin-bottom: 1rem;
+
+  .header__title {
+    font-size: var(--fs-3);
+  }
+}
+
+.memo-item__body {
+  .body__content {
+    font-size: var(--fs-2);
+    line-height: var(--fs-3);
+  }
+
+  .body__time {
+    font-size: var(--fs-1);
+
+    text-align: right;
+
+    margin-top: 0.5rem;
+  }
+}

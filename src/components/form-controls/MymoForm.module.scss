@@ -1,0 +1,47 @@
+.form-con {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.form__title {
+  font-size: 2rem;
+
+  margin-bottom: 3rem;
+}
+
+.button-con {
+  display: flex;
+  justify-content: right;
+}
+
+.button {
+  cursor: pointer;
+
+  border: none;
+  padding: 1rem;
+
+  border-radius: var(--round-1);
+
+  color: #fff;
+
+  transition: var(--speed-1)
+}
+
+.cancel-button {
+  @extend .button;
+
+  background-color: var(--danger-color);
+
+  &:hover {
+    background-color: var(--danger-color--active);
+  }
+}
+
+.submit-button {
+  @extend .button;
+  background-color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color--active);
+  }
+}

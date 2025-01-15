@@ -1,0 +1,19 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 992px;
+    margin: 0 auto;
+
+    padding: 1rem;
+}
+
+.main {
+    margin-top: 2rem;
+
+    padding: 2rem;
+
+    border-radius: var(--round-1);
+    background-color: white;
+}

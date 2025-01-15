@@ -1,0 +1,32 @@
+.pagination-bar {
+    margin-top: 2rem;
+}
+
+.pagination-list {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-item {
+    
+    margin: 0 0.2rem;
+    
+    a {
+
+        text-transform: capitalize;
+
+        background-color: var(--dark-color);
+        border-radius: var(--round-1);
+
+        display: block;
+
+        padding: 0.5rem;
+        text-decoration: none;
+        color: var(--light-color);
+
+        transition: var(--speed-1);
+        &:hover {
+            background-color: var(--orange-color);
+        }
+    }
+}
