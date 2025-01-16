@@ -14,7 +14,7 @@ export default class AuthService {
 
   private readonly signInUrl: URL;
 
-  /** 로컬 스토리지에 저장된 로그인 상태의 유효기간 */
+  /** 세션 스토리지에 저장된 로그인 상태의 유효기간 */
   private SESSION_EXPIRATION_PERIOD = 1000 * 60 * 30;
 
   private constructor() {
@@ -40,7 +40,7 @@ export default class AuthService {
   }
 
   /**
-   * 로그인 API를 호출, 로그인 성공 시 localStorage에 로그인 상태를 담습니다.
+   * 로그인 API를 호출, 로그인 성공 시 sessionStorage 로그인 상태를 담습니다.
    * @param formEl
    * @returns
    */
@@ -52,7 +52,7 @@ export default class AuthService {
     });
 
     if (response.status >= 200 && response.status < 300) {
-      localStorage.setItem("session", Date.now().toString());
+      sessionStorage.setItem("session", Date.now().toString());
 
       store.dispatch(signIn());
     }
@@ -62,7 +62,7 @@ export default class AuthService {
 
   /** 현재 로컬스토리지에 세션이 유효한지 확인합니다. */
   public isSessionValid(): boolean {
-    const sessionValue = localStorage.getItem("session");
+    const sessionValue = sessionStorage.getItem("session");
 
     if (sessionValue === null) return false;
 
@@ -87,9 +87,9 @@ export default class AuthService {
   }
 
   /**
-   * 로컬 스토리지에 담긴 로그인 상태 지우기
+   * 세션 스토리지에 담긴 로그인 상태 지우기
    */
   private clearSession() {
-    localStorage.removeItem("session");
+    sessionStorage.removeItem("session");
   }
 }

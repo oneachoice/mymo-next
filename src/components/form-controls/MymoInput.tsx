@@ -1,9 +1,7 @@
 import {
+  ChangeEventHandler,
   FocusEventHandler,
-  HTMLInputTypeAttribute,
-  useCallback,
-  useRef,
-  useState,
+  HTMLInputTypeAttribute
 } from "react";
 
 import styles from "./MymoInput.module.scss";
@@ -15,29 +13,17 @@ interface MymoInputProps {
   type?: HTMLInputTypeAttribute;
   feedback?: string;
   placeholder?: string;
-  regExp?: string;
   required?: boolean;
   defaultValue?: string;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  value?: string | number | readonly string[];
 }
 
 /**
  * input을 관리하기 위한 컴포넌트입니다.
  */
 export default function MymoInput(props: MymoInputProps) {
-  const [isValid, setIsValid] = useState(true);
-
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const onBlurInput = useCallback<FocusEventHandler<HTMLInputElement>>(() => {
-    if (!props.regExp) return;
-    const regExp = new RegExp(props.regExp);
-
-    if (!inputRef.current || !inputRef.current.value) return;
-
-    const inputValue = inputRef.current.value;
-
-    setIsValid(() => regExp.test(inputValue));
-  }, [props.regExp]);
 
   return (
     <div className={styles["input-con"]}>
@@ -51,13 +37,14 @@ export default function MymoInput(props: MymoInputProps) {
         type={props.type}
         placeholder={props.placeholder}
         required={props.required}
-        onBlur={onBlurInput}
-        ref={inputRef}
+        onBlur={props.onBlur}
         defaultValue={props.defaultValue}
+        onChange={props.onChange}
+        value={props.value}
       />
-      <div className={styles["feedback"]} hidden={isValid}>
-        {props.feedback}
-      </div>
+      {props.feedback && (
+        <div className={styles["feedback"]}>{props.feedback}</div>
+      )}
     </div>
   );
 }

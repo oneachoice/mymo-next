@@ -1,0 +1,23 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+
+    font-weight: 700;
+  }
+}

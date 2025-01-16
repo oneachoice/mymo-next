@@ -1,14 +1,15 @@
-import AppHeader from "@/components/globals/AppHeader"; 
+import AppHeader from "@/components/globals/AppHeader";
 
 import styles from "./AppLayout.module.scss";
 
-import { Varela_Round } from "next/font/google";
+import { Nanum_Gothic } from "next/font/google";
 import { PropsWithChildren } from "react";
 
 
-const verelaRound = Varela_Round({
-  weight: ["400"],
-  subsets: ["latin", "latin-ext"],
+
+const nanumGothic = Nanum_Gothic({
+  weight: ["400", "700", "800"],
+  subsets: ["latin"],
 });
 
 /**
@@ -16,7 +17,7 @@ const verelaRound = Varela_Round({
  */
 export default function AppLayout(props: PropsWithChildren) {
   return (
-    <div className={styles["container"]} style={verelaRound.style}>
+    <div className={styles["container"]} style={nanumGothic.style}>
       <AppHeader />
       <main className={styles["main"]}>{props.children}</main>
     </div>

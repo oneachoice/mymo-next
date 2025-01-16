@@ -2,12 +2,12 @@ import { MouseEventHandler, useCallback, useState } from "react";
 import styles from "./AppHeader.module.scss";
 import AccountNav from "./AccountNav";
 import Link from "next/link";
+import AuthFallbackContainer from "../containers/AuthFallbackContainer";
 
 /**
  * 본문의 글로벌 헤더 컴포넌트입니다.
  */
 export default function AppHeader() {
-
   // 오프캔버스 활성화 상태
   const [isActive, setIsActive] = useState(false);
 
@@ -22,14 +22,12 @@ export default function AppHeader() {
     isActive ? styles["cross"] : "",
   ].join(" ");
 
-
   /** 온/오프 상태에 따라 오프캔버스 클래스 네임 지정 */
   const offcanvasClassName = [
     styles["offcanvas"],
     isActive ? styles["open"] : "",
   ].join(" ");
 
-  
   return (
     <>
       <header className={styles["header"]}>
@@ -60,7 +58,11 @@ export default function AppHeader() {
           </div>
           {/* 오프캔버스 네비게이션 */}
           <ul className={styles["nav-list"]}>
-            <li className={styles["nav-list__item"]}><Link href={"/mymo"}>Mymo</Link></li>
+            <AuthFallbackContainer>
+              <li className={styles["nav-list__item"]}>
+                <Link href={"/mymo"}>Mymo</Link>
+              </li>
+            </AuthFallbackContainer>
           </ul>
         </nav>
       </div>

@@ -28,23 +28,23 @@ export default function MymoWriting() {
   return (
     <AuthRedirectionContainer redirect="/sign-in">
       <div>
-      <MymoForm onSubmit={onSubmit} submitText="Write" formTitle="Writing">
-        <MymoInput
-          labelContent="Title"
-          name="title"
-          required={true}
-          id="title"
-          type="text"
-        />
-        <MymoTextArea
-          labelContent="Content"
-          name="content"
-          required={true}
-          id="content"
-          rows={25}
-        />
-      </MymoForm>
-    </div>
+        <MymoForm onSubmit={onSubmit} submitText="작성" formTitle="메모">
+          <MymoInput
+            labelContent="제목"
+            name="title"
+            required={true}
+            id="title"
+            type="text"
+          />
+          <MymoTextArea
+            labelContent="내용"
+            name="content"
+            required={true}
+            id="content"
+            rows={25}
+          />
+        </MymoForm>
+      </div>
     </AuthRedirectionContainer>
   );
 }
