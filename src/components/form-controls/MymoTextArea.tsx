@@ -10,7 +10,7 @@ interface MymoTextAreaProps {
   placeholder?: string;
   regExp?: string;
   required?: boolean;
-  value?: string;
+  defaultValue?: string;
   rows?: number;
 }
 
@@ -47,7 +47,7 @@ export default function MymoTextArea(props: MymoTextAreaProps) {
         placeholder={props.placeholder}
         required={props.required}
         ref={textAreaRef}
-        value={props.value}
+        defaultValue={props.defaultValue}
         onBlur={onBlurTextArea}
         rows={props.rows}
       />

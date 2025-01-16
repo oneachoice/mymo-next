@@ -111,6 +111,10 @@ button.cross .button__line {
   display: flex;
   align-items: center;
 
+  border-bottom: 1px solid var(--dark-color);
+
+  padding-bottom: 1rem;
+
   .button__line {
     background-color: var(--dark-color);
   }
@@ -122,4 +126,26 @@ button.cross .button__line {
 
 .nav-list {
   margin-top: 2rem;
+}
+
+.nav-list__item {
+
+  margin: 2rem 10%;
+
+  a {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+
+    text-decoration: none;
+
+    font-size: var(--fs-3);
+    color: var(--dark-color);
+
+    transition: var(--speed-1);
+
+    &:hover {
+      color: var(--dark-color--active);
+    }
+  }
 }

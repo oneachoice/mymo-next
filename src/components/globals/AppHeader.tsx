@@ -60,7 +60,7 @@ export default function AppHeader() {
           </div>
           {/* 오프캔버스 네비게이션 */}
           <ul className={styles["nav-list"]}>
-            <li><Link href={"/mymo"}>My memo</Link></li>
+            <li className={styles["nav-list__item"]}><Link href={"/mymo"}>Mymo</Link></li>
           </ul>
         </nav>
       </div>

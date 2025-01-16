@@ -17,7 +17,7 @@ interface MymoInputProps {
   placeholder?: string;
   regExp?: string;
   required?: boolean;
-  value?: string;
+  defaultValue?: string;
 }
 
 /**
@@ -53,7 +53,7 @@ export default function MymoInput(props: MymoInputProps) {
         required={props.required}
         onBlur={onBlurInput}
         ref={inputRef}
-        value={props.value}
+        defaultValue={props.defaultValue}
       />
       <div className={styles["feedback"]} hidden={isValid}>
         {props.feedback}

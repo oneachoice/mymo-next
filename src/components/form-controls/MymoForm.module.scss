@@ -30,7 +30,9 @@
 .cancel-button {
   @extend .button;
 
-  background-color: var(--danger-color);
+  background-color: var(--faint-grey-color--active);
+
+  margin-right: 0.5rem;
 
   &:hover {
     background-color: var(--danger-color--active);

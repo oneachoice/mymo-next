@@ -1,3 +1,4 @@
+import LinkButton from "@/components/commons/LinkButton";
 import PaginationBar from "@/components/commons/PaginationBar";
 import AuthRedirectionContainer from "@/components/containers/AuthRedirectionContainer";
 import MemoItem from "@/components/memo/MemoItem";
@@ -31,6 +32,15 @@ export default function MymoList() {
   return (
     <AuthRedirectionContainer redirect="/sign-in">
       <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "right",
+            marginBottom: "1rem",
+          }}
+        >
+          <LinkButton href="/mymo/write" text="Write" />
+        </div>
         <ul>
           {memoPageDto?.content.map((memoDto) => {
             return <MemoItem key={memoDto.id} memoDto={memoDto} />;

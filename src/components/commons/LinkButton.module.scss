@@ -1,0 +1,22 @@
+a.link-button {
+  // a태그 스타일 초기화
+  display: inline-block;
+  text-decoration: none;
+
+  background-color: var(--faint-grey-color);
+  color: var(--dark-color);
+
+  padding: var(--fs-1);
+  font-size: var(--fs-2);
+
+  border-radius: var(--round-1);
+
+  transition: var(--speed-1);
+
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    background-color: var(--faint-grey-color--active);
+    color: var(--dark-color--active);
+  }
+}
